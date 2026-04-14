@@ -1,0 +1,519 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #000;
+  line-height: 1.25;
+  font-size: 9pt;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Page ── */
+.page {
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 0.3in 0;
+}
+
+/* ── Index ── */
+h1 {
+  font-size: 14pt;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 9pt;
+  color: #000;
+  margin-bottom: 24px;
+}
+
+.checklist-link {
+  display: flex;
+  align-items: center;
+  border: 1px solid #16A34A;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #000;
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+
+.checklist-link:hover {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.checklist-link.blue { border-left: 4px solid #3B82F6; border-color: #3B82F6; }
+.checklist-link.green { border-left: 4px solid #16A34A; }
+
+.checklist-link h2 {
+  font-size: 10pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #000;
+}
+
+/* ── Section Header ── */
+.section-header {
+  padding-bottom: 3px;
+  margin-bottom: 6px;
+  border-bottom: 2px solid #16A34A;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+.section-header h2 {
+  font-size: 12pt;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000;
+}
+
+/* ── Card ── */
+.card {
+  box-shadow: 0 0 0 1px #16A34A;
+  border-radius: 8px;
+  overflow: hidden;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 10px;
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: #16A34A;
+  color: #fff;
+}
+
+.header-speeds {
+  font-size: 9.5pt;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: none;
+  padding-left: 10px;
+  color: #fff;
+}
+
+
+.card-body {
+  padding: 0;
+}
+
+/* ── Checklist Row ── */
+.row {
+  display: flex;
+  align-items: baseline;
+  padding: 1px 10px;
+  gap: 5px;
+}
+
+.row:nth-child(even) {
+  background: #F3F4F6;
+}
+
+.row .item {
+  font-size: 9.5pt;
+  font-weight: 600;
+  color: #000;
+  white-space: nowrap;
+}
+
+.row .dots {
+  flex: 1;
+  border-bottom: 1px solid #000;
+  min-width: 4px;
+  margin-bottom: 3px;
+}
+
+.row .action {
+  font-size: 9.5pt;
+  font-weight: 400;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  color: #000;
+  text-align: left;
+  width: 46%;
+  flex-shrink: 0;
+}
+
+/* ── V-Speeds Card ── */
+.vspeed-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.vspeed-card .card-body {
+  flex: 1;
+}
+
+/* ── V-Speeds Grid ── */
+.vspeed-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0;
+}
+
+.vspeed-card .vspeed-grid {
+  height: 100%;
+}
+
+.vspeed {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  padding: 0 10px;
+  font-size: 8pt;
+}
+
+.vspeed.left {
+  border-right: 1px solid #16A34A;
+}
+
+.vspeed-divider {
+  grid-column: 1 / -1;
+  border-top: 1px solid #16A34A;
+  margin: 0;
+}
+
+.vspeed-name {
+  font-weight: 700;
+  min-width: 28px;
+}
+
+.vspeed-desc {
+  flex: 1;
+  color: #000;
+}
+
+.vspeed-value {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ── Card Sub-header ── */
+.card-subheader {
+  padding: 3px 10px 2px;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #fff;
+  background: #9CA3AF;
+}
+
+.card.red .card-subheader { background: #FCA5A5; }
+.card.green .card-subheader { background: #86EFAC; }
+.card.blue .card-subheader { background: #93C5FD; }
+
+/* ── Indented Sub-row ── */
+.row.indent .item {
+  font-size: 8.5pt;
+  font-weight: 500;
+  padding-left: 14px;
+}
+
+.row.indent .action {
+  font-size: 8.5pt;
+}
+
+/* ── Card Instruction (text block) ── */
+.card-instruction {
+  padding: 3px 10px;
+  font-size: 8pt;
+  line-height: 1.3;
+  color: #000;
+}
+
+/* ── Card Grid (two-column layout) ── */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0 5px;
+  flex: 1;
+}
+
+.card-grid > * {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 5px;
+  min-width: 0;
+}
+
+.card-grid > * > :last-child {
+  flex: 1;
+}
+
+.card-grid .row .action {
+  width: 53%;
+}
+
+/* ── Card Note (supplementary text) ── */
+.card-note {
+  padding: 4px 10px;
+  font-size: 7.5pt;
+  font-style: italic;
+  line-height: 1.3;
+  color: #000;
+  background: #E5E7EB;
+}
+
+.card.red .card-note { background: #FEE2E2; }
+.card.green .card-note { background: #DCFCE7; }
+.card.blue .card-note { background: #DBEAFE; }
+
+.card-note ul {
+  margin: 0;
+  padding-left: 14px;
+  list-style: disc;
+}
+
+.card-note li {
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Nav ── */
+.nav {
+  max-width: 65%;
+  margin: 0 auto;
+  padding: 8px 0;
+  font-size: 8pt;
+}
+
+.nav a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* ── Reference Card ── */
+.ref-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.ref-card .card-body {
+  flex: 1;
+}
+
+/* ── Reference Grid ── */
+.ref-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0;
+}
+
+.ref-card .ref-grid {
+  height: 100%;
+}
+
+.ref-grid.single {
+  grid-template-columns: 1fr;
+}
+
+.ref-group-header {
+  grid-column: 1 / -1;
+  padding: 3px 10px 2px;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  background: #93C5FD;
+  color: #fff;
+}
+
+.card.red .ref-group-header { background: #FCA5A5; }
+.card.green .ref-group-header { background: #86EFAC; }
+
+.ref-group-header:first-child {
+  border-top: none;
+}
+
+.ref-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 1px 10px;
+  font-size: 8.5pt;
+}
+
+.ref-item.left {
+  border-right: 1px solid #3B82F6;
+}
+
+.card.red .ref-item.left { border-right-color: #EF4444; }
+.card.green .ref-item.left { border-right-color: #16A34A; }
+
+.ref-item.full {
+  grid-column: 1 / -1;
+}
+
+.ref-label {
+  color: #000;
+}
+
+.ref-value {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ── Blue Variant ── */
+.card.blue {
+  box-shadow: 0 0 0 1px #3B82F6;
+}
+
+.card.blue .card-header {
+  background: #3B82F6;
+}
+
+/* ── Red Variant ── */
+.card.red {
+  box-shadow: 0 0 0 1px #EF4444;
+}
+
+.card.red .card-header {
+  background: #EF4444;
+}
+
+/* ── Print ── */
+@media print {
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .print-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 5px;
+    height: 100vh;
+  }
+
+  .print-page > :last-child {
+    flex: 1;
+  }
+
+  .print-page + .print-page {
+    break-before: page;
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #16A34A;
+  }
+
+
+  .card.blue {
+    box-shadow: none;
+    border-color: #3B82F6;
+  }
+
+  .card.red {
+    box-shadow: none;
+    border-color: #EF4444;
+  }
+
+  .card-header {
+    padding: 3px 8px;
+  }
+
+  .card-body {
+    padding: 0;
+  }
+
+  .row {
+    padding: 0 8px;
+  }
+
+  .card-subheader,
+  .card-note,
+  .card-instruction {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .nav {
+    display: none;
+  }
+}
+
+@page {
+  margin: 0.25in 0.4in;
+}
+
+/* ── Screen ── */
+@media screen {
+  body {
+    background: #F3F4F6;
+    padding: 0.5in 0;
+  }
+
+  .page {
+    max-width: 6in;
+    margin: 0 auto;
+  }
+
+  .print-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 5px;
+    background: white;
+    padding: 0.25in 0.3in;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    margin-bottom: 0.4in;
+    height: 10.92in;
+  }
+
+  .print-page > :last-child {
+    flex: 1;
+  }
+
+  .card-header {
+    padding: 3px 8px;
+  }
+
+  .row {
+    padding: 0 8px;
+  }
+
+  .card-subheader,
+  .card-note,
+  .card-instruction {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
